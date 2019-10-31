@@ -24,3 +24,7 @@ A C/S one&lt;->manay/one chat
 6. 输入ip，输入token
 
 7. 在发送端开始发送消息
+
+# 还可以发送图片
+
+![](https://github.com/Cricle/Chating/blob/master/ref/1.png)
