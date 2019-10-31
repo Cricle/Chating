@@ -1,0 +1,42 @@
+syntax = "proto3";
+message SendPkg {
+    bytes data=2;
+    int32 type=3;
+    map<string, bytes> medata = 4;
+}
+message SendRequest {
+    string to=1;
+    string token=2;
+    SendPkg pkg = 3;
+}
+message RecvResponse {
+    string from=1;
+    SendPkg pkg = 3;
+}
+message StatusResponse {
+    bool Status=1;
+}
+message RecvRequest {
+    string token=1;
+}
+message UserRequest {
+    string name =1;
+    string pwd=2;
+}
+message LoginResponse {
+    string token=1;
+    bool status=2;
+    int64 expTime=3;
+}
+message LogoutRequest {
+    string token=1;
+}
+service Chat {
+    rpc Login (UserRequest) returns (LoginResponse);
+    rpc Register (UserRequest) returns (StatusResponse);
+    rpc Logout (LogoutRequest) returns (StatusResponse);
+    //开始接受消息
+    rpc Recv (RecvRequest) returns (stream RecvResponse);
+    //发送消息
+    rpc Send (SendRequest) returns (StatusResponse);
+}
