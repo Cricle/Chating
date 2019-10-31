@@ -27,4 +27,4 @@ A C/S one&lt;->manay/one chat
 
 # 还可以发送图片
 
-![](https://github.com/Cricle/Chating/blob/master/ref/1.png)
+[](https://github.com/Cricle/Chating/blob/master/ref/1.png)
